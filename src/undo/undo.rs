@@ -1047,9 +1047,9 @@ impl Default for UndoManager {
 
 /// The application's undo/journal data directory.
 pub fn default_data_dir() -> PathBuf {
-    dirs::data_dir()
+    dirs::home_dir()
         .unwrap_or_else(|| PathBuf::from("."))
-        .join("bulk-renamer")
+        .join(".local/share/daggas/bulk-renamer")
         .join("undo")
 }
 

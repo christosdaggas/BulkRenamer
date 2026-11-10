@@ -319,9 +319,9 @@ impl PresetManager {
 
 impl Default for PresetManager {
     fn default() -> Self {
-        let presets_dir = dirs::data_dir()
+        let presets_dir = dirs::home_dir()
             .unwrap_or_else(|| PathBuf::from("."))
-            .join("bulk-renamer")
+            .join(".local/share/daggas/bulk-renamer")
             .join("presets");
 
         Self::new(presets_dir)

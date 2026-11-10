@@ -349,9 +349,9 @@ impl RenameLogger {
 
 impl Default for RenameLogger {
     fn default() -> Self {
-        let log_file = dirs::data_dir()
+        let log_file = dirs::home_dir()
             .unwrap_or_else(|| PathBuf::from("."))
-            .join("bulk-renamer")
+            .join(".local/share/daggas/bulk-renamer")
             .join("logs")
             .join("rename.log");
 

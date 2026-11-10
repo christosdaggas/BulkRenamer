@@ -282,7 +282,7 @@ impl Default for AppSettings {
 impl AppSettings {
     /// Get the path to the config file
     pub fn config_path() -> Option<PathBuf> {
-        dirs::config_dir().map(|p| p.join("bulk-renamer").join("settings.toml"))
+        dirs::home_dir().map(|p| p.join(".local/share/daggas/bulk-renamer").join("settings.toml"))
     }
 
     /// Load settings from config file, or return defaults if not found
